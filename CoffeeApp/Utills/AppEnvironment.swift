@@ -53,10 +53,10 @@ enum AppEnvironment: String {
     var baseURL: URL {
         switch self {
         case .dev:
-            //return URL(string: "http://localhost:57222/orders")!
-            return URL(string: "http://localhost:57222")!
+            //return URL(string: "http://localhost:59704/orders")!
+            return URL(string: "http://localhost:59704")!
         case .test:
-            return URL(string: "http://localhost:57222")!
+            return URL(string: "http://localhost:59704")!
         }
     }
 }
