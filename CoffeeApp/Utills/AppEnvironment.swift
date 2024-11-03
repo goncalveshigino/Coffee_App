@@ -12,6 +12,7 @@ enum Endpoints {
     case allOrders
     case placeOrder
     case deleteOrder(Int)
+    case updateOrder(Int)
     
     var path: String {
         switch self {
@@ -20,6 +21,8 @@ enum Endpoints {
         case .placeOrder:
             return "/test/new-order"
         case .deleteOrder(let orderId):
+            return "/test/orders/\(orderId)"
+        case .updateOrder(let orderId):
             return "/test/orders/\(orderId)"
         }
     }
@@ -50,10 +53,10 @@ enum AppEnvironment: String {
     var baseURL: URL {
         switch self {
         case .dev:
-            //return URL(string: "http://localhost:50315/orders")!
-            return URL(string: "http://localhost:50916")!
+            //return URL(string: "http://localhost:57222/orders")!
+            return URL(string: "http://localhost:57222")!
         case .test:
-            return URL(string: "http://localhost:50916")!
+            return URL(string: "http://localhost:57222")!
         }
     }
 }
